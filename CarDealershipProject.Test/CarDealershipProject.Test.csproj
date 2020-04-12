@@ -18,7 +18,7 @@
     <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
     <PackageReference Include="Moq" Version="4.13.1" />
-    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.1">
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.4">
       <PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
       <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
     </PackageReference>
