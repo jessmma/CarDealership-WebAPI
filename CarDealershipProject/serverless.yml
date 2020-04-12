@@ -1,0 +1,24 @@
+service: CarDealershipProject
+
+provider:
+    name: aws
+    runtime: dotnetcore2.1
+    region: us-east-2
+    vpc:
+      securityGroupIds:
+        - sg-0b222a5c919fa7474
+      subnetIds:
+        - subnet-4007f82b
+        - subnet-b9ed71f5
+        - subnet-ed83b697
+
+package:
+    artifact: bin/release/netcoreapp2.1/deploy-package.zip
+
+functions:
+    api:
+      handler: CarDealershipProject::CarDealershipProject.LambdaEntryPoint::FunctionHandlerAsync
+      events:
+        - http:
+            path: /{proxy+}
+            method: ANY
